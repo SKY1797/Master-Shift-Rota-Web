@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShiftMaster Rota</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header-content">
+          <img
+            src="https://ntpc.co.in/themes/ntpc/images/logo.png"
+            alt="NTPC Logo"
+            class="company-logo"
+          />
+          <h1 class="title">ShiftMaster Rota</h1>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F4fc8e298e8f14cb4a840bef0b4950cb0%2F65e36ae5b0424d7db9054f7901d998c1?format=webp&width=800"
+            alt="Solapur Logo"
+            class="solapur-logo"
+          />
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- Group Selection Tabs -->
+        <div class="group-tabs">
+          <button class="group-tab active" data-group="A">Group A</button>
+          <button class="group-tab" data-group="B">Group B</button>
+          <button class="group-tab" data-group="C">Group C</button>
+          <button class="group-tab" data-group="D">Group D</button>
+        </div>
+
+        <!-- Calendar Card -->
+        <div class="calendar-card">
+          <div class="calendar-header">
+            <h2 class="calendar-title" id="calendar-title">
+              <!-- Month/Year will be inserted here -->
+            </h2>
+            <div class="navigation-buttons">
+              <button
+                class="nav-button"
+                id="prev-month"
+                aria-label="Previous month"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m15 18-6-6 6-6" />
+                </svg>
+              </button>
+              <button
+                class="nav-button"
+                id="next-month"
+                aria-label="Next month"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="calendar-content">
+            <!-- Week days header -->
+            <div class="weekdays-header">
+              <div class="weekday">Sun</div>
+              <div class="weekday">Mon</div>
+              <div class="weekday">Tue</div>
+              <div class="weekday">Wed</div>
+              <div class="weekday">Thu</div>
+              <div class="weekday">Fri</div>
+              <div class="weekday">Sat</div>
+            </div>
+
+            <!-- Calendar grid -->
+            <div class="calendar-grid" id="calendar-grid">
+              <!-- Calendar days will be inserted here -->
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p class="developer-credit">Developed by Akash Kantaria</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

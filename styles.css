@@ -1,0 +1,451 @@
+/* CSS Variables - Color Palette */
+:root {
+  --background: hsl(0, 0%, 96.1%); /* #F5F5F5 */
+  --foreground: hsl(222.2, 84%, 4.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222.2, 84%, 4.9%);
+  --primary: hsl(231, 48%, 48%); /* #3F51B5 */
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(210, 40%, 96.1%);
+  --secondary-foreground: hsl(222.2, 47.4%, 11.2%);
+  --muted: hsl(210, 40%, 96.1%);
+  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+  --border: hsl(214.3, 31.8%, 91.4%);
+  --ring: hsl(231, 48%, 48%);
+  --radius: 0.5rem;
+
+  /* Shift Colors */
+  --shift-morning: hsl(91, 38%, 65%); /* #A8C686 */
+  --shift-evening: hsl(25, 68%, 67%); /* #E59F71 */
+  --shift-night: hsl(210, 9%, 43%); /* #646E78 */
+  --shift-weekly-off: hsl(199, 35%, 62%); /* #6CA6C1 */
+  --shift-general: hsl(207, 100%, 93%); /* #D6EFFF */
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  line-height: 1.5;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+}
+
+/* Header */
+.header {
+  margin-bottom: 2rem;
+}
+
+.header-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+}
+
+.company-logo {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 3rem;
+  width: auto;
+  object-fit: contain;
+}
+
+.solapur-logo {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 3rem;
+  width: auto;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Group Tabs */
+.group-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  background-color: var(--muted);
+  border-radius: var(--radius);
+  padding: 0.25rem;
+  max-width: 24rem;
+  margin: 0 auto;
+  height: 3rem;
+}
+
+.group-tab {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: calc(var(--radius) - 2px);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .group-tab {
+    font-size: 0.875rem;
+  }
+}
+
+.group-tab:hover {
+  background-color: var(--secondary);
+}
+
+.group-tab.active {
+  background-color: var(--card);
+  color: var(--foreground);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+}
+
+/* Calendar Card */
+.calendar-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Calendar Header */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.calendar-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  font-family: "Inter", sans-serif;
+}
+
+.navigation-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--foreground);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-button:hover {
+  background-color: var(--secondary);
+}
+
+/* Calendar Content */
+.calendar-content {
+  padding: 1rem;
+}
+
+.weekdays-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.weekday {
+  padding: 0.5rem 0;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+/* Day Cards */
+.day-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 7rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .day-card {
+    height: 8rem;
+  }
+}
+
+.day-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.day-card.other-month {
+  color: var(--muted-foreground);
+  background-color: var(--muted);
+  opacity: 0.7;
+}
+
+.day-card.today {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  background-color: var(--background);
+}
+
+.day-card.today .day-number {
+  color: var(--primary);
+}
+
+/* Shift Backgrounds */
+.day-card.shift-morning {
+  background-color: var(--shift-morning);
+  color: var(--foreground);
+}
+
+.day-card.shift-evening {
+  background-color: var(--shift-evening);
+  color: var(--foreground);
+}
+
+.day-card.shift-night {
+  background-color: var(--shift-night);
+  color: var(--primary-foreground);
+}
+
+.day-card.shift-weekly-off {
+  background-color: var(--shift-weekly-off);
+  color: var(--primary-foreground);
+}
+
+.day-card.shift-general {
+  background-color: var(--shift-general);
+  color: var(--foreground);
+}
+
+.day-number {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.shift-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.25rem;
+}
+
+.shift-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke-width: 2;
+}
+
+.shift-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+/* Shift Icons */
+.shift-morning .shift-icon {
+  color: var(--primary);
+}
+
+.shift-evening .shift-icon {
+  color: var(--primary);
+}
+
+.shift-night .shift-icon {
+  color: var(--primary-foreground);
+}
+
+.shift-weekly-off .shift-icon {
+  color: var(--primary);
+}
+
+.shift-general .shift-icon {
+  color: var(--primary);
+}
+
+/* Shift Names */
+.shift-morning .shift-name {
+  color: var(--muted-foreground);
+}
+
+.shift-evening .shift-name {
+  color: var(--muted-foreground);
+}
+
+.shift-night .shift-name {
+  color: var(--primary-foreground);
+  opacity: 0.8;
+}
+
+.shift-weekly-off .shift-name {
+  color: var(--primary-foreground);
+  opacity: 0.8;
+}
+
+.shift-general .shift-name {
+  color: var(--muted-foreground);
+}
+
+/* Other month adjustments */
+.day-card.other-month .shift-icon,
+.day-card.other-month .shift-name {
+  color: var(--primary);
+}
+
+/* Footer */
+.footer {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.developer-credit {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .title {
+    font-size: 1.875rem;
+  }
+
+  .day-card {
+    height: 6rem;
+    padding: 0.5rem;
+  }
+
+  .day-number {
+    font-size: 1rem;
+  }
+
+  .shift-name {
+    font-size: 0.75rem;
+  }
+
+  .shift-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .group-tab {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.5rem;
+  }
+}
+
+/* Loading skeleton (for initial state) */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--muted) 25%,
+    var(--secondary) 50%,
+    var(--muted) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
