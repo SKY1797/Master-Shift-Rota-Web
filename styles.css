@@ -402,6 +402,11 @@ body {
   font-weight: 400;
 }
 
+.developer-credit::before {
+    content: "👨‍💻";
+    font-size: 1rem;
+}
+
 /* Responsive Design */
 @media (max-width: 640px) {
   .title {
