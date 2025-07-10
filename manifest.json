@@ -2,7 +2,7 @@
 {
   "name": "Shift Scheduler",
   "short_name": "Scheduler",
-  "start_url": "https://sky1797.github.io/Master-Shift-Rota-Web/index.html",
+  
   "display": "standalone",
   "icons": [
     {
