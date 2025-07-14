@@ -1,10 +1,9 @@
-const CACHE_NAME = 'electrical-app-v1';
+const CACHE_NAME = 'Shift-rota-v1';
 const urlsToCache = [
   '/',
   '/index.html',
   '/styles.css',
   '/script.js',
-  '/data.js',
   '/icon-192.png',
   '/icon-512.png',
   '/favicon.ico',
