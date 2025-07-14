@@ -1,4 +1,4 @@
-const CACHE_NAME = 'Shift-rota-v1';
+const CACHE_NAME = 'Shift-rota-v2';
 const urlsToCache = [
   '/',
   '/index.html',
